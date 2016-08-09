@@ -197,7 +197,7 @@ class FriendsController extends AppController {
         }
 
         $getID = $check['0']['id'];
-        debug($getID);
+        
         $friend = $this->Friends->get($getID);
         
         $array = array(
@@ -207,8 +207,8 @@ class FriendsController extends AppController {
         );
 
         $this->Friends->patchEntity($friend, $array);
-        debug($this->Friends->patchEntity($friend, $array)); 
-        debug($this->Friends->save($friend));
+        
+        
         
         if ($this->Friends->save($friend)) {
             $this->Flash->success(__('Ban da tro thanh ban voi ' . $user['0']['username']));

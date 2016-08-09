@@ -59,7 +59,7 @@ class AuthController extends AppController {
                      */
                     $session = $this->request->session();                  
                     $user = $this->Users->newEntity();
-                    debug($this->Auth->user());
+                    
                     $session->write('id', $this->Auth->user('id'));
                     $session->write('username', $this->Auth->user('username'));
                     $session->write('getname', $user->getNameOrUsername($this->Auth->user())); 

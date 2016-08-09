@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse">
             <!-- @if (Auth::check()) -->
             <ul class="nav navbar-nav">
-                <li><a href="#">Timeline</a></li>
+                <li><?php echo $this->Html->link(__('Timeline'),array('controller'=>'Tineline','action'=>'index'))?></li>
                 <li><?php echo $this->Html->link(__('Friends'),array('controller'=>'Friends','action'=>'index'))?></li>
             </ul>
 

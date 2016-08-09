@@ -41,7 +41,7 @@ class TimelineController extends AppController {
         // Nếu request gửi lên dưới dạng post
         if($this->request->is('post')){                       
             $new_status = $this->Statuses->patchEntity($new_status,$this->request->data);
-            debug('1');
+            
             // Nếu có lỗi liên quan đến validate, hiển thị nó trên view
             if(!empty($new_status->errors())){
                 $this->Flash->set(array_values($new_status->errors()['reply-'.$statusId])['0'], [                    
@@ -147,7 +147,7 @@ class TimelineController extends AppController {
             array_push($getFriend_ids, $friend->friend_id);
         }
         $statuses = array();
-        debug($getFriend_ids);
+        
         if(!empty($getFriend_ids)){
             $statuses = $this->Statuses->find('all', [
                 'conditions' => array(
@@ -187,7 +187,7 @@ class TimelineController extends AppController {
                 };            
             }            
         }
-        debug($statuses->toArray());
+        
         $this->set('statuses', $statuses);  
         
         /**

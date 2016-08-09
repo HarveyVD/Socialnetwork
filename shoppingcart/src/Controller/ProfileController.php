@@ -116,7 +116,7 @@ class ProfileController extends AppController {
                 'Friends.accepted' => 0
             )
         ])->contain(['Users']);
-        debug($checkReceive->toArray());
+       
         $this->set('checkReceive', $checkReceive->all());
 
         /**

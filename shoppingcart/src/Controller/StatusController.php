@@ -25,13 +25,13 @@ class StatusController extends AppController {
     
     public function status(){
         $statusTable = TableRegistry::get('Statuses');
-        debug($this->request->data);
+        
         $status = $this->Statuses->newEntity();
         $status = $this->Statuses->patchEntity($status, $this->request->data);       
-        debug($status->errors());
+        
         
         $results = $statusTable->find('all')->toArray();
-        debug($results);
+        
        
     }
 }
